@@ -103,3 +103,72 @@ header img {
     align-self: start;
     font-size: 20px;
 }
+
+/*
+    M E D I A   Q U E R Y S
+*/
+
+@media (max-width: 320px) {
+    .card-item::before {
+        border-width: 25px 305px 0 0;
+    }
+    
+    .card-item::after {
+        border-width: 25px 305px 0px 0;
+        bottom: 30px;
+    }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 360px) {
+    .card-item::before {
+        border-width: 30px 345px 0 0;
+    }
+    
+    .card-item::after {
+        border-width: 30px 345px 0px 0;
+        bottom: 35px;
+    }
+}
+
+@media only screen and (min-width: 361px) and (max-width: 411px) {
+    .card-item::before {
+        border-width: 30px 395px 0 0;
+    }
+    
+    .card-item::after {
+        border-width: 30px 395px 0px 0;
+        bottom: 35px;
+    }
+}
+
+@media only screen and (min-width: 412px) and (max-width: 414px) {
+    .card-item::before {
+        border-width: 30px 398px 0 0;
+    }
+    
+    .card-item::after {
+        border-width: 30px 398px 0px 0;
+        bottom: 35px;
+    }
+}
+
+@media only screen and (min-width: 415px) and (max-width: 768px) {
+    .card-item::before {
+        border-width: 30px 368px 0 0;
+    }
+    
+    .card-item::after {
+        border-width: 30px 368px 0px 0;
+        bottom: 35px;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    header {
+        margin: 15px auto;
+    }
+    
+    header img {
+        width: 60%;
+    }
+}
