@@ -12,12 +12,12 @@ body {
 
 header {
     margin: 30px auto;
+    text-align: center;
 }
 
 header img {
     width: 40%;
     object-fit: cover;
-    margin: auto;
 }
 
 .image-grid {
