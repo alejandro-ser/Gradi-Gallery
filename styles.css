@@ -1,21 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 header {
-    margin-top: 30px;
-    text-align: center;
+    margin: 30px auto;
 }
 
-#container {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
+header img {
+    width: 40%;
+    object-fit: cover;
+    margin: auto;
 }
 
-.image-item {
-    height: 250px;
-    width: 25%;
-    padding: 10px;
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 1em;
 }
 
-img {
+.card-item {
+    height: 200px;
+    position: relative;
+    box-sizing: border-box;
+    transition: 0.5s ease-in-out;
+}
+
+.card-item:hover {
+    height: 400px;
+}
+
+.card-image {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+}
+
+.card-item::before {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-style: solid;
+    border-width: 40px 290px 0 0;
+    border-color: #fff transparent transparent transparent;
+    z-index: 1;
+}
+
+.card-item::after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    position: relative;
+    border-style: solid;
+    border-width: 40px 290px 0px 0;
+    border-color: transparent #fff transparent transparent;
+    bottom: 45px;
+}
+
+.card-item:hover .card-overlay {
+    display: flex;
+}
+
+.card-overlay {
+    position: absolute;
+    background-color: #00D664;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-flow: column;
+    justify-content: space-around;
+    color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: 0.5s ease-in-out;
+}
+
+.card-id {
+    align-self: end;
+    font-size: 40px;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+.card-logo {
+    width: 40%;
+    align-self: center;
+    object-fit: cover;
+}
+
+.card-author {
+    align-self: start;
+    font-size: 20px;
 }

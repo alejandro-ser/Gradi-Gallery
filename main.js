@@ -6,7 +6,7 @@ var photosApi;
 var init = 0;
 var end = cont;
 // Selector
-let imageGrid = document.querySelector('#container');
+let imageGrid = document.querySelector('#imageGrid');
 
 // Cargar JSON y asignarlo a var photosApi
 function loadJSON() {
@@ -31,12 +31,13 @@ const addToDom = photos => {
     photos.forEach(photo => {
         // Crear estryctura del elemento
         let el = document.createElement("div");
-        el.classList.add('image-item');
+        el.classList.add('card-item');
         el.innerHTML =
-        `<img src="${photo.download_url}">
-            <div class="overlay">
-                <h3>${photo.id}</h3>
-                <h3>${photo.author}</h3>
+        `<img class="card-image" src="${photo.download_url}">
+            <div class="card-overlay">
+                <h3 class="card-id">${photo.id}</h3>
+                <img class="card-logo" src="assets/img/logo-white.png">
+                <h3 class="card-author">${photo.author}</h3>
             </div>`;
         imageGrid.appendChild(el);
     });
