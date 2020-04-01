@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@700&display=swap');
+
+/* Inicar variables */
+$overlay-background: #00D664;
+$font-id: 'Montserrat', sans-serif;
+$font-authors: 'Roboto', sans-serif;
+
+/* Resetear estilos por defecto */
+*, *::before, *::after {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin: 30px auto;
+
+    img {
+        width: 40%;
+        object-fit: cover;
+    }
+}
+
+.image-grid {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.card-item {
+    width: 300px;
+    max-width: 300px;
+    height: 200px;
+    padding: 0 10px;
+    position: relative;
+    transition: 0.5s ease-in-out;
+
+    &:hover {
+        height: 400px;
+    }
+    
+    &:before {
+        content: '';
+        display: inline-block;
+        width: 0;
+        height: 0;
+        position: absolute;
+        border-style: solid;
+        border-width: 40px 290px 0 0;
+        border-color: #fff transparent transparent transparent;
+        z-index: 1;
+    }
+    
+    &:after {
+        content: '';
+        display: inline-block;
+        width: 0;
+        height: 0;
+        position: absolute;
+        bottom: 0px;
+        right: 5px;
+        border-style: solid;
+        border-width: 40px 290px 0px 0;
+        border-color: transparent #fff transparent transparent;
+    }
+    
+    .card-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &:hover .card-overlay {
+        display: flex;
+    }
+    
+    .card-overlay {
+        width: 280px;
+        height: 100%;
+        padding: 0px 20px;
+        position: absolute;
+        top: 0px;
+        display: none;
+        flex-flow: column;
+        justify-content: space-around;
+        background-color: $overlay-background;
+        color: #fff;
+        transition: 0.5s ease-in-out;
+
+        .card-id {
+            text-align: right;
+            font-family: $font-id;
+            font-size: 40px;
+        }
+        
+        .card-logo {
+            width: 40%;
+            height: auto;
+            align-self: center;
+            object-fit: cover;
+        }
+        
+        .card-author {
+            font-size: 22px;
+            font-family: $font-authors;
+        }
+    }
+}
+
+/*
+    Media querys
+*/
+
+@media only screen and (max-width: 414px) {
+    header {
+        margin: 15px auto;
+
+        img {
+            width: 60%;
+        }
+    }
+}
